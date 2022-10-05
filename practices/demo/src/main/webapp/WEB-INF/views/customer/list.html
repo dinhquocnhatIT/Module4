@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>customers</title>
+</head>
+<body>
+There are <span th:text="${customers.size()}"></span> customer(s).
+    <a href="create-customer">Create Customer</a>
+    <h1>Customers</h1>
+    <table border="1">
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>last Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="customer : ${customers}"></th:block>
+    </table>
+</body>
+</html>
