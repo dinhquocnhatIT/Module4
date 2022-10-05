@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <form method="post" th:action="@{/customers/create}" th:object="${customer}" novalidate="novalidate">
+    <form method="post" th:action="@{/customers/create}" th:object="${customer}" >
         <fieldset class="row g-3">
             <div class="col-md-6">
                 <label class="form-label">Full name</label>
@@ -53,7 +53,7 @@
                 <input type="text" class="form-control" th:field="*{address}">
             </div>
             <div class="col-md-12">
-                <button type="submit" id="btnCreateCustomer" class="btn btn-outline-primary" onclick="create()">
+                <button type="submit" id="btnCreateCustomer" class="btn btn-outline-primary">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                     Create customer
                 </button>
@@ -61,20 +61,7 @@
         </fieldset>
     </form>
 </div>
-<div class="alert" style="position: fixed; bottom: 0">
-    <th:block th:if="${message}">
-        <div class="alert alert-success alert-dismissible fade show">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <span th:text="${message}"></span>
-        </div>
-    </th:block>
-    <th:block th:if="${error}">
-        <div class="alert alert-danger alert-dismissible fade show">
-            <button type="button" class="btn-close" data-bs-dismiss="alert">&times;</button>
-            <span th:text="${error}"></span>
-        </div>
-    </th:block>
-</div>
+
 </body>
 <th:block th:replace="/layout/script :: script"/>
 </html>
